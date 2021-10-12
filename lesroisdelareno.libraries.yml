@@ -19,10 +19,10 @@ theme-gater:
       #modele/themes/custom/gater/css/settings.css: {}
       #modele/themes/custom/gater/css/owl.carousel.css: {}
       #modele/themes/custom/gater/css/jquery.fancybox.css: {}
-      modele/themes/custom/gater/css/fonts/fontello.css: {}
+      css/fonts/fontello.css: {}
       #modele/themes/custom/gater/css/fonts/gizmo.css: {}
-      modele/themes/custom/gater/css/fonts/picons.css: {}
-      #modele/themes/custom/gater/switcher/switcher.css: {}
+      css/fonts/picons.css: {}
+      css/site-default.css: {}
       #modele/themes/custom/gater/css/update.css: {}
 
 google-oswald:

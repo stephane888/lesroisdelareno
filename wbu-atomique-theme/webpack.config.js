@@ -51,6 +51,7 @@ module.exports = {
     "prestataires-m3-default": "./src/js/prestataires-m3-default.js",
     "prestataires-m4": "./src/js/prestataires-m4.js",
     "prestataires-m4-default": "./src/js/prestataires-m4-default.js",
+    "site-default": "./src/js/site-default.js",
   },
   output: {
     path: path.resolve(__dirname, "../"),
