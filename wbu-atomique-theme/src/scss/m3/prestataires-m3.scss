@@ -4,3 +4,10 @@
 @use "../inc/partenaires.scss";
 @use "../inc/cart-summary-final.scss";
 @use "../inc/block-page-title-block.scss";
+
+.product-teaser {
+  .title {
+    font-size: 2.3rem;
+    letter-spacing: 0.3px;
+  }
+}

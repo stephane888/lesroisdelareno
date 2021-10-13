@@ -1,3 +1,4 @@
+// theme-bigger
 @use "@stephane888/wbu-atomique/scss/wbu-ressources-clean.scss" as *;
 @use "./variables.scss" as *;
 @use "./inc/boostrap.scss";
@@ -15,3 +16,7 @@
 @use "@stephane888/wbu-atomique/scss/organisme/sections/comments-left.scss";
 @use "@stephane888/wbu-atomique/scss/organisme/teasers/teaser-cardsimple.scss";
 @use "@stephane888/wbu-atomique/scss/organisme/steph/lesroidelareno/images-bg.scss";
+@use "@stephane888/wbu-atomique/scss/organisme/sections/swiper-big.scss";
+@use "@stephane888/wbu-atomique/scss/organisme/sections/swiper-unique.scss";
+@use "@stephane888/wbu-atomique/scss/organisme/sections/swiper.scss";
+@use "@stephane888/wbu-atomique/scss/organisme/sections/textcotebg.scss";
