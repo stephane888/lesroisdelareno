@@ -19,26 +19,20 @@
  */
 #}
 {% import _self as menus %}
-
 {#
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-
 {{ menus.menu_links(items, attributes, 0,show_icone_home, logged_in, is_admin, layoutData) }}
-
-
 {% macro menu_links(items, attributes, menu_level, show_icone_home, logged_in, is_admin, layoutData) %}
-
 	{% import _self as menus %}
 	{% if items %}
 		{% set classses = 
       menu_level == 0 ? 'nav navbar-nav main-level':'dropdown-menu w-100 sub-menu'      
     %}
 		<ul class="{{classses}}">
+			<span class="kksa-888-kksa"></span>
 			{% for item in items %}
-
-
 				{%
             set classes = [
               menu_level ? 'dropdown-item' : 'nav-item',
@@ -58,9 +52,7 @@
                 item.url.getOption('attributes').class ? item.url.getOption('attributes').class | join(' '),
               ]
             %}
-
 						{% if item.below %}
-
 							{{ link(item.title, item.url, {'class': link_classes, 'data-toggle': 'dropdown', 'aria-expanded': 'false', 'aria-haspopup': 'true' }) }}
 							{{ menus.menu_links(item.below, attributes, menu_level + 1) }}
 						{% else %}
@@ -77,7 +69,6 @@
 							{{item.content}}
 						</div>
 					{% endif %}
-
 				</li>
 			{% endfor %}
 			{# Ajout du menu pour les devis #}
