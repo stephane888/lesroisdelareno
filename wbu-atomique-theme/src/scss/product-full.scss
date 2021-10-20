@@ -2,7 +2,7 @@
 @use "./variables.scss" as *;
 
 .contain-main-menu {
-  margin-bottom: $space_bottom;
+  margin-bottom: $space_bottom !important;
 }
 
 .page-product-full {

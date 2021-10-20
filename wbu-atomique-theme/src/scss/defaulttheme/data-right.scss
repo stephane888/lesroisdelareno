@@ -1,13 +1,13 @@
 @use "@stephane888/wbu-atomique/scss/wbu-ressources-clean.scss" as *;
 @use "../variables.scss" as *;
-.topheader {
+.data-right {
   position: relative;
   .block-commerce-cart-popup {
     @include media-min(DD) {
       position: absolute;
-      left: auto;
-      right: -16%;
-      top: 50px;
+      left: -10%;
+      right: auto;
+      top: 38%;
     }
 
     .commerce-cart-pop--summary__count {
