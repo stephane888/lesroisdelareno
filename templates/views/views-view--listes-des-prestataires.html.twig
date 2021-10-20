@@ -32,9 +32,7 @@
  * @ingroup themeable
  */
 #}
-
 {{ attach_library('lesroisdelareno/prestataires') }}
-
 {%
   set classes = [
     dom_id ? 'js-view-dom-id-' ~ dom_id,
@@ -46,16 +44,13 @@
 	{{ title_prefix }}
 	{{ title }}
 	{{ title_suffix }}
-
 	{% if header %}
 		<header>
 			{{ header }}
 		</header>
 	{% endif %}
-
 	{{ exposed }}
 	{{ attachment_before }}
-
 	{% if rows -%}
 		{% if view_array["#view_display_plugin_id"] == 'page' %}
 			<div class="row">
@@ -68,15 +63,12 @@
 		{{ empty }}
 	{% endif %}
 	{{ pager }}
-
 	{{ attachment_after }}
 	{{ more }}
-
 	{% if footer %}
-		<footer>
+		<footer class="col-md-12">
 			{{ footer }}
 		</footer>
 	{% endif %}
-
 	{{ feed_icons }}
 </div>

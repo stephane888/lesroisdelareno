@@ -6,6 +6,7 @@
 @use "./topbar.scss";
 @use "./header-nav";
 @use "./contain-main-menu.scss";
+@use "./topheader.scss";
 
 //
 .container {
@@ -16,4 +17,10 @@
   a {
     color: $wbu-color-primary;
   }
+}
+
+div#sliding-popup,
+div#sliding-popup .eu-cookie-withdraw-banner,
+.eu-cookie-withdraw-tab {
+  background: $wbu-color-primary;
 }

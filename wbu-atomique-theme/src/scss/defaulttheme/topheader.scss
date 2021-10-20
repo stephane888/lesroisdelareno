@@ -1,0 +1,31 @@
+@use "@stephane888/wbu-atomique/scss/wbu-ressources-clean.scss" as *;
+@use "../variables.scss" as *;
+.topheader {
+  position: relative;
+  .block-commerce-cart-popup {
+    @include media-min(DD) {
+      position: absolute;
+      left: auto;
+      right: -16%;
+      top: 50px;
+    }
+
+    .commerce-cart-pop--summary__count {
+      top: -19px;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      left: -9px;
+      right: auto;
+
+      background-color: $wbu-color-primary;
+    }
+    .commerce-cart-pop--summary__icon {
+      width: 40px;
+      height: 40px;
+      background-size: contain;
+    }
+  }
+}
