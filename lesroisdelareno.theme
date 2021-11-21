@@ -9,7 +9,7 @@ use Drupal\Core\Template\Attribute;
 use Drupal\wbumenudomain\Entity\Wbumenudomain as WbumenudomainEntity;
 
 /**
- * custom config.
+ * custom config. ..
  */
 require_once ('inc/form.inc');
 
