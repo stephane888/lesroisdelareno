@@ -43,8 +43,11 @@
 		{{ product.variation_price }}
 	</div>
 	<div class="item button">
-		<a href="{{- product_url -}}" class="button--add-to-cart button button--primary js-form-submit form-submit btn btn-outline-primary d-block w-100">
-			Voir le produit
+		{% set nameVendeur %}{{product.field_domain_access }}
+		{% endset %}
+		<a href="{{- product_url -}}" class="button--add-to-cart button button--primary js-form-submit form-submit btn btn-outline-primary d-block w-100 text-center">
+			vendu par
+			{{nameVendeur|striptags|trim}}
 		</a>
 	</div>
 	<div class="item stock">
