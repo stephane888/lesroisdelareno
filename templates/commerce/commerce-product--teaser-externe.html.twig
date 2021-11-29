@@ -45,10 +45,16 @@
 	<div class="item button">
 		{% set nameVendeur %}{{product.field_domain_access }}
 		{% endset %}
-		<a href="{{- product_url -}}" class="button--add-to-cart button button--primary js-form-submit form-submit btn btn-outline-primary d-block w-100 text-center">
-			vendu par
-			{{nameVendeur|striptags|trim}}
-		</a>
+		{% if external_domaine %}
+			<a href="{{- product_url -}}" class="button--add-to-cart button button--primary js-form-submit form-submit btn btn-outline-primary d-block w-100 text-center">
+				vendu par
+				{{nameVendeur|striptags|trim}}
+			</a>
+		{% else %}
+			<div class="item button">
+				{{ product.variations }}
+			</div>
+		{% endif %}
 	</div>
 	<div class="item stock">
 		{{ product.variation_field_stock_disponible }}
