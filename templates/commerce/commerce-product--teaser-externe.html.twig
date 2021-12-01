@@ -43,11 +43,12 @@
 		{{ product.variation_price }}
 	</div>
 	<div class="item button">
-		{% set nameVendeur %}{{product.field_domain_access }}
+		{% set nameVendeur %}
+		{{ product.uid }}
 		{% endset %}
 		{% if external_domaine %}
 			<a href="{{- product_url -}}" class="button--add-to-cart button js-form-submit form-submit btn btn-outline-success text-success d-block w-100 text-center">
-				vendu par
+				Vendu par
 				{{nameVendeur|striptags|trim}}
 			</a>
 		{% else %}
