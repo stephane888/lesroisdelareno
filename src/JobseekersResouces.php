@@ -12,10 +12,7 @@ class JobseekersResouces
     public static function wbupreprocess_page(&$variables)
     {
         // $parameters = \Drupal::routeMatch()->getParameters()->all();
-        // dump($parameters);
-        // debugLog::kintDebugDrupal(self::getListLayout(), 'getListLayout');
-        // $variables['page']['demo_layout'] = self::LoadLayout('top_header');
-        // dump($layoutPluginManager);
+        
         // self::loadUserInfo($variables, $parameters);
         $route_name = \Drupal::routeMatch()->getRouteName();
         if ($route_name == 'entity.webform.canonical') {

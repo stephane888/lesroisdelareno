@@ -43,17 +43,7 @@ function lesroisdelareno_preprocess_html(&$variables)
     //
 }
 
-/**
- * Implement hook_preprocess_page
- */
-function lesroisdelareno_library_info_alter(&$libraries, $extension)
-{
-    // dump($extension);
-    // dump($libraries);
-    if ($extension == "formatage_models") {
-        // dump($libraries);
-    }
-}
+
 
 /**
  * Implement hook_preprocess_page
@@ -70,11 +60,11 @@ function lesroisdelareno_page_attachments_alter(array &$attachments)
     if (! empty($active))
         $id = $active->id();
 
-    // dump($attachments);
+    
     $query = \Drupal::entityQuery('wbumenudomain')->condition('hostname', $id);
     $domainIds = $query->execute();
     $domainProperty = WbumenudomainEntity::loadMultiple($domainIds);
-    // dump($domainProperty);
+    
     if (! empty($domainProperty)) {
         /**
          *
@@ -115,7 +105,7 @@ function lesroisdelareno_preprocess_input__image_button(array &$variables)
  */
 function lesroisdelareno_preprocess_pager(array &$variables)
 {
-    // dump($variables);
+    
     // $variables['pager']['items'];
     // if (! isset($variables['items']) && $variables['pager']['items']) {
     // $variables = $variables['pager'] + $variables;
@@ -143,13 +133,6 @@ function lesroisdelareno_preprocess_pager(array &$variables)
     // }
 }
 
-/**
- * Implement hook_preprocess_page
- */
-function lesroisdelareno_preprocess_region(array &$variables)
-{
-    // dump($variables);
-}
 
 function lesroisdelareno_preprocess_form(array &$variables)
 {
@@ -159,23 +142,7 @@ function lesroisdelareno_preprocess_form(array &$variables)
     }
 }
 
-/**
- * Implement hook_preprocess_page
- */
-function lesroisdelareno_preprocess_webform(array &$variables)
-{
-    // dump($variables);
-}
 
-/**
- * Implement hook_preprocess_page
- */
-function lesroisdelareno_preprocess_fieldset(array &$variables)
-{
-    // dump($variables);
-    // debugLog::$themeName = null;
-    // debugLog::kintDebugDrupal($variables, 'fieldset', null, true);
-}
 
 /**
  * Implement hook_preprocess_page
@@ -197,7 +164,7 @@ function lesroisdelareno_preprocess_commerce_checkout_pane(array &$variables)
     if (! empty($variables['elements']['#pane_id'])) {
         $variables['attributes']['class'][] = $variables['elements']['#pane_id'];
         if (! empty($variables['elements']['payment_method'])) {
-            // dump($variables['elements']);
+            
             $variables['elements']['payment_method']['#prefix'] = '<div class="content-payment-info">';
             $variables['elements']['payment_method']['#suffix'] = '</div>';
         }

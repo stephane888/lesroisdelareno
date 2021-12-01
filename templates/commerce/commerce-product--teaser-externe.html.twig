@@ -46,7 +46,7 @@
 		{% set nameVendeur %}{{product.field_domain_access }}
 		{% endset %}
 		{% if external_domaine %}
-			<a href="{{- product_url -}}" class="button--add-to-cart button button--primary js-form-submit form-submit btn btn-outline-primary d-block w-100 text-center">
+			<a href="{{- product_url -}}" class="button--add-to-cart button js-form-submit form-submit btn btn-outline-success text-success d-block w-100 text-center">
 				vendu par
 				{{nameVendeur|striptags|trim}}
 			</a>
