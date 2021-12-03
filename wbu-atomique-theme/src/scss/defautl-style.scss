@@ -7,6 +7,23 @@
 .dialog-off-canvas-main-canvas {
   width: 100%;
 }
+.page-orther-custom {
+  margin-top: $wbu-margin * 2;
+  margin-bottom: $wbu-margin * 2;
+}
+table {
+  tr {
+    td {
+      .form-check-label {
+        display: none;
+      }
+    }
+  }
+}
+.form-row {
+  align-items: end;
+  align-items: flex-end;
+}
 
 .lesroisdelareno-blockcounter {
   .title {
