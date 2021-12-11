@@ -3,6 +3,10 @@
 .contain-main-menu {
   font-family: "Oswald", sans-serif;
   border-top: 1px solid #ebebeb;
+  .dropdown-toggle::after {
+    background: #f8f9fa;
+    margin-top: 6px;
+  }
   .dropdown {
     position: unset;
   }
@@ -26,13 +30,10 @@
     }
   }
   .sub-menu {
-    flex-wrap: wrap;
-    border: none;
-    box-shadow: 0 15px 30px rgb(0 0 0 / 10%);
-    padding: $wbu-margin;
     .dropdown-item {
       min-width: 200px;
       width: 25%;
+
       &:hover {
         background: transparent;
       }

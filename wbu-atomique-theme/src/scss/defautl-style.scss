@@ -3,6 +3,7 @@
 @use "./defaulttheme/baseStyle.scss";
 @use "./fonts/Ubuntu/police.scss";
 @use "@stephane888/wbu-atomique/scss/organisme/sections/footers/footer1.scss";
+@use "@stephane888/wbu-atomique/scss/molecule/stan/subMenu.scss";
 
 .dialog-off-canvas-main-canvas {
   width: 100%;

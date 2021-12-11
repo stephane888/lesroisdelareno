@@ -86,6 +86,14 @@ function lesroisdelareno_preprocess_layout_main_menu(array &$variables) {
 /**
  * Implement hook_preprocess_page
  */
+function lesroisdelareno_preprocess_menu__extras(array &$variables) {
+  // dump($variables);
+  $variables['attributes']['class'][] = 'bg-info_kksa888';
+}
+
+/**
+ * Implement hook_preprocess_page
+ */
 function lesroisdelareno_preprocess_input__image_button(array &$variables) {
   if (isset($variables['element']["#src"]) && $variables['element']["#src"] === 'modules/contrib/webform/images/icons/plus.svg') {
     $variables['attributes']['class'][] = 'd-none';

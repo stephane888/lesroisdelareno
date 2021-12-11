@@ -2,7 +2,7 @@
 	{% set link_item %}
 	{{content.url}}
 	{% endset %}
-	<div {{attributes.addClass('layout__region')}}>
+	<div {{attributes.addClass('layout__region','d-flex','justify-content-center','flex-column')}}>
 		<div {{region_attributes.datas.addClass('main')}}>
 			<a href="{{link_item|striptags|trim}}">
 				{{content.dadas|layout_value}}
