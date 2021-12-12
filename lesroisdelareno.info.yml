@@ -20,7 +20,7 @@ regions:
 # Ajout des librairies
 libraries:
   - lesroisdelareno/theme-gater
-  #- lesroisdelareno/tawk_config
+  - lesroisdelareno/tawk_config
   #- lesroisdelareno/override-style
   #- lesroisdelareno/google-oswald
   #- lesroisdelareno/defautl-style
