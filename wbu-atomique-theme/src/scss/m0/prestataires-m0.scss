@@ -4,6 +4,10 @@
 @use "../inc/block-page-title-block.scss";
 @use "../inc/filter-side-bar-search.scss";
 
+.menu.navbar {
+  justify-content: center;
+}
+
 .filter-side-bar-search {
   margin-bottom: $wbu-margin * 1.5;
   .form-row {
@@ -26,5 +30,14 @@
 .teaser-img-desc {
   .title {
     color: $wbu-color-primary;
+  }
+}
+
+//
+.contain-main-menu {
+  .item-id-35 {
+    a {
+      color: #f00;
+    }
   }
 }

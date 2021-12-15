@@ -14,10 +14,24 @@ use Drupal\wbumenudomain\Entity\Wbumenudomain as WbumenudomainEntity;
 require_once ('inc/form.inc');
 
 /**
- * Implement hook_preprocess_page
+ * implemente hook_theme_suggestions_HOOK_alter
+ *
+ * @param int $suggestions
+ * @param int $variables
+ * @param int $hook
  */
-function lesroisdelareno_preprocess_page(&$variables) {
-  JobseekersResouces::wbupreprocess_page($variables);
+function lesroisdelareno_theme_suggestions_page_alter(array &$suggestions, array $variables, $hook) {
+  $parameters = \Drupal::routeMatch()->getParameters()->all();
+  /**
+   *
+   * @var Drupal\taxonomy\Entity\Term $term
+   */
+  if (!empty($parameters['taxonomy_term'])) {
+    $term = $parameters['taxonomy_term'];
+    if ($term->bundle() == 'categorie_produit') {
+      $suggestions[] = 'page__taxonomy__product_teaser';
+    }
+  }
 }
 
 /**

@@ -44,13 +44,13 @@
                     %}
 					<li{{item.attributes.addClass(classes)}}>
 						{%
-          set link_classes = [
-            not menu_level ? 'nav-link',
-            item.in_active_trail ? 'active',
-            item.below ? 'dropdown-toggle',
-            item.url.getOption('attributes').class ? item.url.getOption('attributes').class | join(' '),
-          ]
-                         %}
+              set link_classes = [
+                not menu_level ? 'nav-link',
+                item.in_active_trail ? 'active',
+                item.below ? 'dropdown-toggle',
+                item.url.getOption('attributes').class ? item.url.getOption('attributes').class | join(' '),
+              ]
+            %}
 						{% if item.below %}
 							{{ link(item.title, item.url, {'class': link_classes, 'data-toggle': 'dropdown', 'aria-expanded': 'false', 'aria-haspopup': 'true' }) }}
 							{{ menus.menu_links(item.below, attributes, menu_level + 1) }}

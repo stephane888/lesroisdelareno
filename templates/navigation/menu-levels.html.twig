@@ -17,14 +17,18 @@
 	<div class="{{classMenu}}">
 		<ul class=" menu menu-level-{{ items|first.menu_level }} navbar">
 			{% for key, item in items if key|first != '#' %}
+				{% 
+            set menuId = 'item-id-' ~ item.entity.id()
+        %}
 				{% set menu_item_classes = [
-      'menu-item',
-      items|first.menu_level == 0 ? 'dropdown nav ',
-      item.below and items|first.menu_level == 0 ? 'dropdown-toggle',
-      items|first.menu_level != 0 ? 'dropdown-item',
-      item.is_expanded ? 'menu-item--expanded',
-      item.is_collapsed ? 'menu-item--collapsed',
-      item.in_active_trail ? 'menu-item--active-trail',
+          'menu-item',
+          items|first.menu_level == 0 ? 'dropdown nav ',
+          item.below and items|first.menu_level == 0 ? 'dropdown-toggle',
+          items|first.menu_level != 0 ? 'dropdown-item',
+          item.is_expanded ? 'menu-item--expanded',
+          item.is_collapsed ? 'menu-item--collapsed',
+          item.in_active_trail ? 'menu-item--active-trail',
+          menuId
     ] %}
 				<li{{item.attributes.addClass(menu_item_classes)}}>
 					{% if items|first.menu_level == 0 %}
