@@ -5,7 +5,9 @@
 @use "../inc/filter-side-bar-search.scss";
 
 .menu.navbar {
-  justify-content: center;
+  @include media-min(DD) {
+    justify-content: center;
+  }
 }
 
 .filter-side-bar-search {
