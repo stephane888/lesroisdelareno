@@ -1,0 +1,177 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+{#
+<article{{attributes.addClass(['row','product-full'])}}>
+
+	<div class="col-md-6">
+
+		{{product.field_images}}
+
+	</div>
+
+	<div class="col-md-6">
+
+		<h1 class="title">
+
+			{{ product.title }}
+
+		</h1>
+
+		{{ product.variation_price }}
+		{{- product | without ('variation_attributes','field_images','body','field_informations_complementair','field_fiche_technique','variation_price') -}}
+
+		<div class="call-action-devis">
+
+			<i class="icon-tools"></i>
+
+			<span>
+				Lesroisdelareno vous propose la pose de cet article.
+			</span>
+
+			<a href="#">
+				Faites une demande de devis
+			</a>
+
+		</div>
+
+	</div>
+
+	<div class="product-tabs col-12">
+
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+
+			<li class="nav-item" role="presentation">
+
+				<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+					Description
+				</a>
+
+			</li>
+			<li class="nav-item" role="presentation">
+
+				<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+					Informations complémentaires
+				</a>
+
+			</li>
+			<li class="nav-item" role="presentation">
+
+				<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
+					Fiche technique by spaker_dev 
+				</a>
+
+			</li>
+
+		</ul>
+
+		<div class="tab-content" id="myTabContent">
+
+			<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+				{{product.body}}
+
+			</div>
+
+			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+				{{product.field_informations_complementair}}
+
+			</div>
+
+			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+				{{product.field_fiche_technique}}
+				
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+</article> #}
+<div
+	{{ attributes.addClass('row') }}>
+	{# chargement des images : modifications du look en feal | by Spaker_dev  #}
+	<div class="col-md-12">
+		<div class="prom_image">
+			{{ product.field_images[0] }}
+		</div>
+		<p class="prom_img_title">
+			{{ product.title }}
+		</p>
+		{#<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>#}
+		<div class="stars">
+			<svg
+				fill="gold" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512" width="20px" height="20px">
+				<!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->
+				<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+			</svg>
+			<svg
+				fill="gold" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512" width="20px" height="20px">
+				<!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->
+				<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+			</svg>
+			<svg
+				fill="gold" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512" width="20px" height="20px">
+				<!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->
+				<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+			</svg>
+			<svg
+				fill="gold" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512" width="20px" height="20px">
+				<!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->
+				<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+			</svg>
+			<svg
+				xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512" width="20px" height="20px">
+				<!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->
+				<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+			</svg>
+			&nbsp;
+			<span>
+				67 avis</span>
+		</div>
+		<ul class="reduc">
+			<li class="reduc_percent">
+				-10%
+			</li>
+			<li class="reduc_date">
+				jusqu'au 13 decembre
+			</li>
+		</ul>
+		<p>
+			<s>28.90 &euro;</s>
+		</p>
+		<ul class="product_price">
+			<li>
+				<h4>{{ product.variation_price }}</h4>
+			</li>
+			<li>
+				<sub>/m<sup>2</sup>
+				</sub>
+			</li>
+		</ul>
+		<p>soit 28.89 &euro; / bottle
+		</p>
+	</div>
+</div>

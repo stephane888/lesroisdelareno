@@ -1,0 +1,12 @@
+// theme partenaire
+@use "@stephane888/wbu-atomique/scss/wbu-ressources-clean.scss" as *;
+@use "./variables.scss" as *;
+@use "./inc/theme-commerce-left-right.scss";
+@use "../teaser-bonus.scss";
+
+.block-title {
+  &::before {
+    width: 50px;
+    border-bottom: 2px solid $wbu-color-primary;
+  }
+}

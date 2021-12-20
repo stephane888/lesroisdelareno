@@ -45,10 +45,45 @@ teaser-realisation:
   js:
     js/teaser-realisation.js: {}
 
+teaser_bonus:
+  css:
+    theme:
+      css/teaser-bonus.css: {}
+  js:
+    js/teaser-bonus.js: {}
+
 #####################################################################################################################################################
+
 tawk_config:
   js:
     js/tawk-config.js: {}
+
+prestataires_m7:
+  css:
+    theme:
+      css/prestataires-m7-default.css: {}
+      css/prestataires-m7.css: { weight: 20 }
+  js:
+    js/prestataires-m7-default.js: {}
+    js/prestataires-m7.js: {}
+
+prestataires_m6:
+  css:
+    theme:
+      css/prestataires-m6-default.css: {}
+      css/prestataires-m6.css: { weight: 20 }
+  js:
+    js/prestataires-m6-default.js: {}
+    js/prestataires-m6.js: {}
+
+prestataires_m5:
+  css:
+    theme:
+      css/prestataires-m5-default.css: {}
+      css/prestataires-m5.css: { weight: 20 }
+  js:
+    js/prestataires-m5-default.js: {}
+    js/prestataires-m5.js: {}
 
 prestataires_m4:
   css:

@@ -7,6 +7,8 @@ use Stephane888\Debug\debugLog;
 use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\Core\Template\Attribute;
 use Drupal\wbumenudomain\Entity\Wbumenudomain as WbumenudomainEntity;
+use Drupal\Core\Render\Element;
+use Drupal\user\Entity\User;
 
 /**
  * Custom config.
@@ -57,9 +59,27 @@ function lesroisdelareno_preprocess_select(&$variables) {
 }
 
 /**
+ *
+ * @param array $variables
+ */
+function lesroisdelareno_preprocess_formatage_models_realisation_big(&$variables) {
+  // dump($variables);
+  // debugLog::$max_depth = 7;
+  // debugLog::kintDebugDrupal($variables,
+  // 'lesroisdelareno_preprocess_formatage_models_realisation_big', true);
+  JobseekersResouces::getView__resaliserPar($variables);
+}
+
+function lesroisdelareno_preprocess_formatage_models_realisation_small(&$variables) {
+  JobseekersResouces::getView__resaliserPar($variables);
+}
+
+/**
  * Implement hook_preprocess_page
  */
 function lesroisdelareno_page_attachments_alter(array &$attachments) {
+  // $user = User::load(0);
+  // dump($user);
   // get current domaine id
   /** @var \Drupal\domain\Entity\Domain $active */
   $active = \Drupal::service('domain.negotiator')->getActiveDomain();

@@ -6,3 +6,51 @@
 // librairie;
 @use "@stephane888/wbu-atomique/scss/molecule/stan/ourAchievments-module.scss";
 @use "@stephane888/wbu-atomique/scss/molecule/steph/teaser-img-desc.scss";
+@use "../inc/teaserPromotion.scss";
+
+@mixin logo-partenaire {
+  .logo-partenaire {
+    .img-p {
+      width: 80px;
+      height: 80px;
+      background: rgb(247 247 247 / 88%);
+      border: 1px dashed rgb(247 247 247 / 57%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        height: auto;
+        width: auto;
+        max-width: 80px;
+        max-height: 80px;
+      }
+    }
+  }
+}
+
+.ourAchievments-module {
+  .block-field-blocknodenos-realisationsfield-localisation {
+    position: absolute;
+    top: auto;
+    bottom: 5px;
+    left: auto;
+    right: 80px;
+    width: calc(100% - 85px);
+    min-width: 150px;
+    max-width: 300px;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+
+    .field {
+      font-weight: 600;
+      color: #fff;
+    }
+  }
+  @include logo-partenaire();
+}
+.projecthero-module {
+  @include logo-partenaire();
+}

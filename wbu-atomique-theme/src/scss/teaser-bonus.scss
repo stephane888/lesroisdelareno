@@ -1,0 +1,18 @@
+@use "@stephane888/wbu-atomique/scss/wbu-ressources-clean.scss" as *;
+@use "./variables.scss" as *;
+.product-teaser-simple {
+  background: #fff;
+  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 8%);
+  border: 1px solid #ecedf0;
+  border-radius: 4px;
+  padding: $wbu-margin * 0.5;
+  max-width: 215px;
+  margin-bottom: $wbu-margin;
+  .product_price {
+    color: $wbu-color-primary;
+  }
+  .prom_img_title {
+    font-weight: 600;
+    padding-bottom: $wbu-margin;
+  }
+}

@@ -1,0 +1,9 @@
+@use "@stephane888/wbu-atomique/scss/wbu-ressources.scss" as *;
+@use "../variables.scss" as *;
+.teasers-architecte {
+  .teaser-cardsimple {
+    .card-title {
+      font-size: $wbu-default-font-size * 1.2;
+    }
+  }
+}
