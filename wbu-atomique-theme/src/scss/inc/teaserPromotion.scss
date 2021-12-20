@@ -3,11 +3,6 @@
 /* conteneur principal */
 .produits-promotions {
   margin-top: $wbu-margin * 2;
-  .col-md-12 {
-    border: 0px solid black;
-    height: 550px;
-    width: 100%;
-  }
 
   .prom_image {
     position: relative;
@@ -31,16 +26,16 @@
 
   /*item card produit title */
 
-  .col-md-12 .prom_img_title {
-    text-align: center;
+  .prom_img_title {
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 22px;
+    font-size: $wbu-default-font-size * 1.3;
+    margin-bottom: $wbu-margin * 0.5;
   }
 
   /* reduction & date limite */
 
-  .col-md-12 .reduc {
+  .reduc {
     display: inline-block;
     width: 100%;
     border: 0px solid black;
@@ -48,7 +43,7 @@
     color: red;
     list-style: none;
   }
-  .col-md-12 .reduc .reduc_date {
+  .reduc .reduc_date {
     display: block;
     float: left;
     margin-left: 0 auto;
@@ -57,7 +52,7 @@
     height: auto;
     text-align: center;
   }
-  .col-md-12 .reduc .reduc_percent {
+  .reduc .reduc_percent {
     display: block;
     float: left;
     margin-left: -40px;
@@ -71,17 +66,17 @@
 
   /* prix par mettre carré */
 
-  .col-md-12 .product_price {
+  .product_price {
     display: inline-block;
     width: 100%;
     border: 0px solid black;
     color: red;
     list-style: none;
   }
-  .col-md-12 .product_price li:first-child {
+  .product_price li:first-child {
     margin-left: -40px;
   }
-  .col-md-12 .product_price li {
+  .product_price li {
     list-style: none;
     display: block;
     float: left;

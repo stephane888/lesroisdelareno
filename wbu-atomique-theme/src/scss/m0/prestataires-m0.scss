@@ -3,6 +3,7 @@
 @use "../inc/cart-summary-final.scss";
 @use "../inc/block-page-title-block.scss";
 @use "../inc/filter-side-bar-search.scss";
+@use "../product-promotion.scss";
 
 .menu.navbar {
   @include media-min(DD) {
