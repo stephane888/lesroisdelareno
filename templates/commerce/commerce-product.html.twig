@@ -20,13 +20,11 @@
  */
 #}
 {{ attach_library('lesroisdelareno/product-full') }}
-
-
 <article{{attributes.addClass(['row','product-full'])}}>
-	<div class="col-md-6">
+	<div class="col-md-7">
 		{{product.field_images}}
 	</div>
-	<div class="col-md-6">
+	<div class="col-md-5">
 		<h1 class="title">
 			{{ product.title }}
 		</h1>
@@ -53,28 +51,22 @@
 				<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
 					Informations complémentaires
 				</a>
-
 			</li>
 			<li class="nav-item" role="presentation">
 				<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
 					Fiche technique
 				</a>
-
 			</li>
 		</ul>
 		<div class="tab-content" id="myTabContent">
 			<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 				{{product.body}}
 			</div>
-
 			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 				{{product.field_informations_complementair}}
 			</div>
-
 			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 				{{product.field_fiche_technique}}</div>
-
 		</div>
-
 	</div>
 </article>

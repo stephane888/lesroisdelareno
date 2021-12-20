@@ -36,6 +36,69 @@ function lesroisdelareno_theme_suggestions_page_alter(array &$suggestions, array
   }
 }
 
+function lesroidelareno_preprocess_commerce_price_calculated(&$vars) {
+  // dump($vars);
+  
+  /**
+   *
+   * @var Drupal\commerce_order\PriceCalculatorResult $result
+   */
+  $result = $vars['result'];
+  
+  /**
+   *
+   * @var <array, multitype:\Drupal\commerce_order\Adjustment >
+   *      $adjustments
+   */
+  $adjustments = $result->getAdjustments();
+  // dump($adjustments);
+  
+  /**
+   *
+   * @var \Drupal\commerce_price\Price $basePrice
+   */
+  $basePrice = $result->getBasePrice();
+  
+  /**
+   *
+   * @var \Drupal\commerce_price\Price $calculatePrice
+   */
+  $calculatePrice = $result->getCalculatedPrice();
+  if ($calculatePrice->lessThan($basePrice)) {
+    $vars['calculated_price'] = [
+      [
+        '#type' => 'html_tag',
+        '#tag' => 's',
+        '#attributes' => [
+          'class' => [
+            'text-secondary',
+            'price-promotion'
+          ]
+        ],
+        '#value' => $vars['base_price']
+      ],
+      [
+        '#type' => 'html_tag',
+        '#tag' => 'div',
+        '#attributes' => [
+          'class' => [
+            'price-calculate'
+          ]
+        ],
+        '#value' => $vars['calculated_price']
+      ]
+    ];
+    ;
+  }
+}
+
+function lesroisdelareno_preprocess_commerce_product(&$vars) {
+  // dump($vars['product_entity']);
+  // debugLog::$max_depth = 5;
+  // debugLog::kintDebugDrupal($vars['product'],
+  // 'lesroisdelareno_preprocess_commerce_product', true);
+}
+
 /**
  * Implement hook_preprocess_page
  */
