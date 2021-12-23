@@ -10,9 +10,36 @@
   margin-bottom: $wbu-margin;
   .product_price {
     color: $wbu-color-primary;
+    font-size: $wbu-default-font-size;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .reduc {
+      margin-bottom: $wbu-margin * 0.5;
+      .reduc_percent {
+        background: #f00;
+        color: #fff;
+        padding: 0 5px;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        margin-right: 5px;
+      }
+      .reduc_date {
+        color: $wbu-color-text;
+      }
+    }
+    .price-calculate {
+      font-size: $wbu-default-font-size * 1.5;
+    }
   }
   .prom_img_title {
     font-weight: 600;
     padding-bottom: $wbu-margin;
+    a {
+      color: inherit;
+    }
   }
 }

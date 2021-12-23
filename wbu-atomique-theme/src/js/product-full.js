@@ -47,12 +47,7 @@ $ = window.jQuery;
       var InputMax = document.querySelector(
         '.filter-side-bar-prix [name="number[max]"]'
       );
-      console.log(
-        "InputMax.value : ",
-        InputMax.value,
-        " : ",
-        parseInt(InputMax.value)
-      );
+
       $("#product-full-ion-range-slider").slider({
         range: true,
         min: InputMin.value ? parseInt(InputMin.value) : 0,
@@ -87,12 +82,29 @@ $ = window.jQuery;
     );
   }
   /**
-   *
+   * bug: evenement addEventListener non definit.( à corriger )
    */
-  var selectElement = document.querySelector(
-    '.filter-principal [name="sort_by"]'
-  );
-  selectElement.addEventListener("change", () => {
-    document.querySelector(' .filter-principal [type="submit"] ').click();
-  });
+  // var selectElement = document.querySelector(
+  //   '.filter-principal [name="sort_by"]'
+  // );
+  // selectElement.addEventListener("change", () => {
+  //   document.querySelector(' .filter-principal [type="submit"] ').click();
+  // });
 })();
+
+/**
+ * Affichage du bouton show hide text body.
+ */
+var body = document.querySelector(".product-full .field.description");
+var H = body.clientHeight;
+if (H > 500) {
+  body.classList.add("hidden-text");
+  var button = document.querySelector(".product-tabs--button");
+  button.style.visibility = "visible";
+  button.style.opacity = 1;
+  button.addEventListener("click", () => {
+    if (body.classList.contains("hidden-text"))
+      body.classList.remove("hidden-text");
+    else body.classList.add("hidden-text");
+  });
+}

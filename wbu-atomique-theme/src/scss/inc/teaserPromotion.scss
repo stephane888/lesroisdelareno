@@ -67,24 +67,22 @@
   /* prix par mettre carré */
 
   .product_price {
-    display: inline-block;
+    display: block;
     width: 100%;
     border: 0px solid black;
     color: red;
     list-style: none;
-  }
-  .product_price li:first-child {
-    margin-left: -40px;
-  }
-  .product_price li {
+    font-size: $wbu-default-font-size * 1.2;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
     list-style: none;
-    display: block;
-    float: left;
-    width: auto;
-    margin: 0 auto;
-    left: 0;
-    height: auto;
+    align-items: baseline;
+    .price-calculate {
+      font-size: $wbu-default-font-size * 1.8;
+    }
   }
+
   /* item card produit avis block */
   .stars {
     margin-bottom: 10px;

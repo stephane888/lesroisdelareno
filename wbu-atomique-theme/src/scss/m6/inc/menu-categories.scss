@@ -1,0 +1,36 @@
+@use "@stephane888/wbu-atomique/scss/wbu-ressources.scss" as *;
+@use "../variables.scss" as *;
+.menu-categories {
+  ul {
+    list-style: none;
+  }
+  .hierarchical-term__menu {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    li {
+      a {
+        color: inherit;
+      }
+      svg {
+        width: 20px;
+        fill: #000;
+        margin-right: $wbu-margin * 0.5;
+      }
+    }
+    > li {
+      width: 25%;
+      min-width: 300px;
+      > .block-taxonomymenu__link {
+        font-weight: 600;
+      }
+      .hierarchical-term__menu--sub {
+        padding-left: $wbu-margin * 1.5;
+
+        .hierarchical-term__menu--sub .hierarchical-term__menu--sub {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}

@@ -29,7 +29,7 @@
 			{{ product.title }}
 		</h1>
 		{{ product.variation_price }}
-		{{- product | without ('variation_attributes','field_images','body','field_informations_complementair','field_fiche_technique','variation_price') -}}
+		{{- product | without ('variation_attributes','field_images','body','field_informations_complementair','field_fiche_technique','variation_price','field_commentaires') -}}
 		<div class="call-action-devis">
 			<i class="icon-tools"></i>
 			<span>
@@ -68,5 +68,20 @@
 			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 				{{product.field_fiche_technique}}</div>
 		</div>
+		<button class="btn btn-outline-info product-tabs--button">
+			Voir toutes les informations
+		</button>
+	</div>
+	<div class="product-comments">
+		<div class="block-title">
+			<h3 class="title">
+				Avis
+			</h3>
+		</div>
+		<div class="details-avis">
+			Ces avis sont authentiques. Seuls les avis ne concernant pas directement le produit, le service ou ne respectant pas les CGU sont rejetés.
+						La modération est supportée à la fois par une technologie d'anti-fraude et par une analyse humaine. En savoir plus.
+		</div>
+		{{product.field_commentaires}}
 	</div>
 </article>

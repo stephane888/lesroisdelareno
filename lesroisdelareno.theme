@@ -1,5 +1,6 @@
 <?php
 use Drupal\lesroisdelareno\JobseekersResouces;
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Drupal\Core\Url;
@@ -52,6 +53,76 @@ function lesroidelareno_preprocess_commerce_price_calculated(&$vars) {
    */
   $adjustments = $result->getAdjustments();
   // dump($adjustments);
+  $entity_type_id = 'commerce_promotion';
+  $promotion_storage = Drupal::entityTypeManager()->getStorage($entity_type_id);
+  /**
+   *
+   * @var Drupal\Core\Datetime\DateFormatter $dater
+   */
+  $dater = \Drupal::service('date.formatter');
+  // $promotionView =
+  // Drupal::entityTypeManager()->getViewBuilder($entity_type_id);
+  $views = [];
+  foreach ($adjustments as $adjustment) {
+    if ($adjustment->getType() == 'promotion') {
+      /**
+       *
+       * @var Drupal\commerce_promotion\Entity\Promotion $applied_promotion
+       */
+      $applied_promotion = $promotion_storage->load($adjustment->getSourceId());
+      if (!empty($applied_promotion->end_date)) {
+        /**
+         *
+         * @var Drupal\datetime\Plugin\Field\FieldType\DateTimeFieldItemList $dateEnd
+         */
+        $dateEnd = $applied_promotion->end_date;
+        $date = $dateEnd->get(0)->getValue();
+        if (!empty($date['value'])) {
+          $moisFrench = [
+            '01' => 'Janvier'
+          ];
+          $date = new DrupalDateTime($date['value'], 'UTC');
+          $jour = $dater->format($date->getTimestamp(), 'custom', "j");
+          $mois = $dater->format($date->getTimestamp(), 'custom', "m");
+          $Y = $dater->format($date->getTimestamp(), 'custom', "Y");
+          
+          $views[] = [
+            '#type' => 'html_tag',
+            '#tag' => 'ul',
+            '#attributes' => [
+              'class' => [
+                'reduc',
+                'd-flex'
+              ]
+            ],
+            [
+              '#type' => 'html_tag',
+              '#tag' => 'li',
+              '#attributes' => [
+                'class' => [
+                  'reduc_percent'
+                ]
+              ],
+              '#value' => '- ' . ($adjustment->getPercentage() * 100) . " %"
+            ],
+            [
+              '#type' => 'html_tag',
+              '#tag' => 'li',
+              '#attributes' => [
+                'class' => [
+                  'reduc_date'
+                ]
+              ],
+              '#value' => " Jusqu'au " . $jour . ' ' . $moisFrench[$mois] . ' ' . $Y
+            ]
+          ];
+        }
+      }
+    }
+  }
+  // Drupal\commerce_promotion\Entity\Promotion
+  
+  // dump($applied_promotions);
   
   /**
    *
@@ -66,36 +137,58 @@ function lesroidelareno_preprocess_commerce_price_calculated(&$vars) {
   $calculatePrice = $result->getCalculatedPrice();
   if ($calculatePrice->lessThan($basePrice)) {
     $vars['calculated_price'] = [
+      $views,
       [
         '#type' => 'html_tag',
-        '#tag' => 's',
+        '#tag' => 'ul',
         '#attributes' => [
           'class' => [
-            'text-secondary',
-            'price-promotion'
+            'product_price'
           ]
         ],
-        '#value' => $vars['base_price']
-      ],
-      [
-        '#type' => 'html_tag',
-        '#tag' => 'div',
-        '#attributes' => [
-          'class' => [
-            'price-calculate'
+        [
+          '#type' => 'html_tag',
+          '#tag' => 'li',
+          '#attributes' => [
+            'class' => [
+              'text-secondary',
+              'price-base'
+            ]
+          ],
+          [
+            '#type' => 'html_tag',
+            '#tag' => 's',
+            '#value' => $vars['base_price']
           ]
         ],
-        '#value' => $vars['calculated_price']
+        [
+          '#type' => 'html_tag',
+          '#tag' => 'li',
+          '#attributes' => [
+            'class' => [
+              'price-calculate'
+            ]
+          ],
+          [
+            '#type' => 'html_tag',
+            '#tag' => 'div',
+            [
+              '#type' => 'html_tag',
+              '#tag' => 'div',
+              '#value' => $vars['calculated_price']
+            ]
+          ]
+        ]
       ]
     ];
-    ;
   }
+  // dump($vars);
 }
 
 function lesroisdelareno_preprocess_commerce_product(&$vars) {
   // dump($vars['product_entity']);
   // debugLog::$max_depth = 5;
-  // debugLog::kintDebugDrupal($vars['product'],
+  // debugLog::kintDebugDrupal($vars['product_entity'],
   // 'lesroisdelareno_preprocess_commerce_product', true);
 }
 
