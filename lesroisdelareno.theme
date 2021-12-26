@@ -185,6 +185,45 @@ function lesroidelareno_preprocess_commerce_price_calculated(&$vars) {
   // dump($vars);
 }
 
+/**
+ * Surcharge permettant de determiner si un menu contient un layout non vide.
+ * Un menu est non vide s'il a un sous menu ou un layout non vide.
+ * On considere que le layout est vide si le model de rendu est
+ * "layout_builder_blank"
+ *
+ * @param array $vars
+ */
+function lesroisdelareno_preprocess_menu_link_content(&$vars) {
+  // $vars['#is_emty_layout'] = false;
+  // $vars['elements']['idoiteOOOH'] = 'kkza888';
+  // $vars['idoiteOOOH2'] = 'kkza888';
+  // /**
+  // *
+  // * @var Drupal\menu_item_extras\Entity\MenuItemExtrasMenuLinkContent
+  // $MenuExtra
+  // */
+  // $MenuExtra = $vars['content']['#menu_link_content'];
+  // /**
+  // *
+  // * @var \Drupal\layout_builder\Field\LayoutSectionItemList $layout
+  // */
+  // $layout = $MenuExtra->get('layout_builder__layout');
+  // $value = $layout->first();
+  // if ($value) {
+  // $value = $value->getValue();
+  // if ($value['section']) {
+  // /**
+  // *
+  // * @var Drupal\layout_builder\Section $layoutRender
+  // */
+  // $layoutRender = $value['section'];
+  // if ($layoutRender->getLayoutId() == 'layout_builder_blank') {
+  // $vars['#is_emty_layout'] = true;
+  // }
+  // }
+  // }
+}
+
 function lesroisdelareno_preprocess_commerce_product(&$vars) {
   // dump($vars['product_entity']);
   // debugLog::$max_depth = 5;
@@ -360,6 +399,7 @@ function lesroisdelareno_preprocess_commerce_checkout_pane(array &$variables) {
     }
   }
 }
+
 
 
 
