@@ -1,4 +1,4 @@
-// theme-partenaire
+// theme-architecte
 @use "@stephane888/wbu-atomique/scss/wbu-ressources-clean.scss" as *;
 @use "./variables.scss" as *;
 @use "./inc/boostrap.scss";
@@ -9,3 +9,4 @@
 @use "@stephane888/wbu-atomique/scss/molecule/steph/block-call-to-action.scss";
 @use "@stephane888/wbu-atomique/scss/organisme/sections/textcotebg.scss";
 @use "@stephane888/wbu-atomique/scss/organisme/sections/description.scss";
+@use "@stephane888/wbu-atomique/scss/organisme/grids/grids.scss";
