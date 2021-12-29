@@ -5,7 +5,9 @@
 		{% endset %}
 		<a href="{{link_item|striptags|trim}}">
 		{% endif %}
-		<div {{attributes.addClass('layout__region','d-flex','justify-content-center','flex-column')}}>
+		.layout__region.sub-menus {
+				.layout__region.sub-menus {
+		<div {{attributes.addClass('layout__region','sub-menus','d-flex','justify-content-center','flex-column')}}>
 			{% if content.dadas %}
 				<div {{region_attributes.dadas.addClass('dadas','text-center')}}>
 					{{content.dadas|layout_value}}
