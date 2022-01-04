@@ -1,0 +1,96 @@
+//  theme-architecte
+@use "@stephane888/wbu-atomique/scss/wbu-ressources-clean.scss" as *;
+// les styles cidessous charges la definition de variable de leur theme, ( cela peut surchage ./varibles.scss)
+@use "../m5/inc/partenaire-service.scss";
+@use "../m3/inc/avis-theme-extra.scss";
+// on le charge ici pour re surcharger les variables des styles definie cidessus.
+@use "./variables.scss" as *;
+@use "../inc/partenaires.scss";
+@use "./inc/teasers-architecte.scss";
+@use "./inc/swiper-big-v3.scss";
+@use "@stephane888/wbu-atomique/scss/organisme/owls/owl-rc-web.scss";
+@use "./inc/domaine-service.scss";
+
+.bg-theme {
+  background-color: $wbu-color-secondary !important;
+  color: #c5c5c5;
+  .block__whoAreWe {
+    .h2Title {
+      color: #fff;
+      span {
+        color: $wbu-color-primary;
+      }
+    }
+  }
+  &.titre-section {
+    padding-bottom: $space_bottom;
+    .main {
+      color: #fff;
+      margin-bottom: $wbu-margin * 1.5;
+    }
+  }
+}
+.titre-section {
+  .main {
+    span {
+      color: $wbu-color-primary;
+    }
+  }
+}
+.card {
+  background: rgb(255 255 255 / 0.07);
+}
+.avis-theme-extra {
+  &::before {
+    background-color: rgb(32 32 32 / 88%);
+  }
+  .block-title {
+    text-align: center;
+    margin-top: 4rem;
+    color: #fff;
+    &::before {
+      display: none;
+    }
+  }
+  .swiper-image {
+    .cover-text {
+      padding-bottom: 0;
+      .description {
+        padding-top: $wbu-margin * 0.5;
+      }
+    }
+  }
+}
+//@at-root
+.partenaires {
+  .owl-carousel {
+    .owl-item {
+      position: relative;
+      padding-top: 150px;
+      padding-left: 200px;
+      img {
+        max-width: 180px;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translateX(50%);
+        margin-right: -50%;
+      }
+    }
+  }
+}
+//
+.textcotebg {
+  padding-top: 0;
+  .entete {
+    background: rgb(255 255 255 / 0.07);
+  }
+}
+//
+.un-projet {
+  padding-top: $space_bottom;
+  padding-bottom: $space_bottom;
+}

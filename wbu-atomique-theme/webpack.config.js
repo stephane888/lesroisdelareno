@@ -58,6 +58,8 @@ module.exports = {
     "prestataires-m6-default": "./src/js/prestataires-m6-default.js",
     "prestataires-m7": "./src/js/prestataires-m7.js",
     "prestataires-m7-default": "./src/js/prestataires-m7-default.js",
+    "prestataires-m8": "./src/js/prestataires-m8.js",
+    "prestataires-m8-default": "./src/js/prestataires-m8-default.js",
     "site-default": "./src/js/site-default.js",
   },
   output: {

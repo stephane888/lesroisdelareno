@@ -1,0 +1,13 @@
+@use "@stephane888/wbu-atomique/scss/wbu-ressources.scss" as *;
+@use "../variables.scss" as *;
+
+.domaine-service {
+  margin: 0;
+  padding-bottom: $space_bottom;
+  .card {
+    color: #c5c5c5;
+  }
+  .owl-rc-web .owl-stage-outer {
+    padding-bottom: $space_bottom * 0.7;
+  }
+}
