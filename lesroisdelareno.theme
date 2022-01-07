@@ -34,31 +34,9 @@ function lesroisdelareno_theme_suggestions_page_alter(array &$suggestions, array
       $suggestions[] = 'page__taxonomy__product_teaser';
     }
   }
-  // $database = \Drupal::database();
-  // $query = "
-  
-  // SELECT DISTINCT taxonomy_index.sticky AS taxonomy_index_sticky,
-  // taxonomy_index.created AS taxonomy_index_created, node_field_data.nid AS
-  // nid, node_field_data.langcode AS node_field_data_langcode
-  // FROM
-  // {node_field_data} node_field_data
-  // LEFT JOIN {taxonomy_index} taxonomy_index ON node_field_data.nid =
-  // taxonomy_index.nid
-  // WHERE ((taxonomy_index.tid = '73543')) AND ((node_field_data.langcode IN
-  // ('fr')) AND (taxonomy_index.status = '1') AND (node_field_data.type IN
-  // ('prestataires')))
-  // ORDER BY taxonomy_index_sticky DESC, taxonomy_index_created DESC
-  // LIMIT 10 OFFSET 0
-  
-  // ";
-  // $query = $database->query($query);
-  // $result = $query->fetchAll();
-  // dump($result);
 }
 
 function lesroidelareno_preprocess_commerce_price_calculated(&$vars) {
-  // dump($vars);
-  
   /**
    *
    * @var Drupal\commerce_order\PriceCalculatorResult $result

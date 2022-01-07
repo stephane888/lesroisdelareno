@@ -77,21 +77,23 @@ function lesroisdelareno_form_alter(&$form, \Drupal\Core\Form\FormStateInterface
  * @param integer $form_id
  */
 function lesroisdelareno_form_commerce_checkout_flow_multistep_default_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  $form['login']['returning_customer']['#attached']['library'][] = 'login_rx_vuejs/login_register_small';
-  $form['login']['returning_customer']['loginvuejs'] = [
-    '#type' => 'html_tag',
-    '#tag' => 'div',
-    '#attributes' => [
-      'class' => [
-        'price-calculate'
+  $user = Drupal::currentUser();
+  if (!$user->id()) {
+    $form['login']['returning_customer']['#attached']['library'][] = 'login_rx_vuejs/login_register_small';
+    $form['login']['returning_customer']['loginvuejs'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'div',
+      '#attributes' => [
+        'class' => [
+          'price-calculate'
+        ],
+        'id' => 'appLoginRegister',
+        'datase' => 'Enfin hummm'
       ],
-      'id' => 'appLoginRegister',
-      'datase' => 'Enfin hummm'
-    ],
-    '#value' => '',
-    '#weight' => -100
-  ];
-  // dump($form);
+      '#value' => '',
+      '#weight' => -100
+    ];
+  }
 }
 
 function lesroisdelareno_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
