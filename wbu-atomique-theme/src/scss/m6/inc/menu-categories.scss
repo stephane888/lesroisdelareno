@@ -1,5 +1,4 @@
 @use "@stephane888/wbu-atomique/scss/wbu-ressources.scss" as *;
-@use "../variables.scss" as *;
 .menu-categories {
   ul {
     list-style: none;
@@ -8,6 +7,9 @@
     display: flex;
     flex-wrap: wrap;
     padding: 0;
+    .block {
+      margin-bottom: 0;
+    }
     li {
       a {
         color: inherit;
@@ -15,6 +17,10 @@
       svg {
         width: 20px;
         fill: #000;
+        margin-right: $wbu-margin * 0.5;
+      }
+      img {
+        width: 20px;
         margin-right: $wbu-margin * 0.5;
       }
     }
