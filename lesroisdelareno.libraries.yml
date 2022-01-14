@@ -12,7 +12,6 @@ global-style:
 theme-gater:
   css:
     theme:
-      #modele/themes/custom/gater/css/bootstrap.css: {}
       #modele/themes/custom/gater/css/style.css: {}
       #modele/themes/custom/gater/css/responsive.css: {}
       #modele/themes/custom/gater/css/color/yellow.css: {}
@@ -58,7 +57,6 @@ tawk_config:
   js:
     js/tawk-config.js: {}
 
-
 prestataires_m8:
   css:
     theme:
@@ -67,7 +65,6 @@ prestataires_m8:
   js:
     js/prestataires-m8-default.js: {}
     js/prestataires-m8.js: {}
-
 
 prestataires_m7:
   css:
@@ -78,7 +75,6 @@ prestataires_m7:
     js/prestataires-m7-default.js: {}
     js/prestataires-m7.js: {}
 
-
 prestataires_m6:
   css:
     theme:
@@ -87,7 +83,6 @@ prestataires_m6:
   js:
     js/prestataires-m6-default.js: {}
     js/prestataires-m6.js: {}
-
 
 prestataires_m5:
   css:
@@ -98,7 +93,6 @@ prestataires_m5:
     js/prestataires-m5-default.js: {}
     js/prestataires-m5.js: {}
 
-
 prestataires_m4:
   css:
     theme:
@@ -107,7 +101,6 @@ prestataires_m4:
   js:
     js/prestataires-m4-default.js: {}
     js/prestataires-m4.js: {}
-
 
 prestataires_m3:
   css:
@@ -118,7 +111,6 @@ prestataires_m3:
     js/prestataires-m3.js: {}
     js/prestataires-m3-default.js: {}
 
-
 prestataires_m2:
   css:
     theme:
@@ -127,7 +119,6 @@ prestataires_m2:
   js:
     js/prestataires-m2-default.js: {}
     js/prestataires-m2.js: {}
-
 
 prestataires_m1:
   css:

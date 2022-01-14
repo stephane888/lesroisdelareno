@@ -36,7 +36,6 @@ libraries-override:
 
 # Add custom css to ckeditor
 ckeditor_stylesheets:
-  - modele/themes/custom/gater/css/bootstrap.css
   - css/style-auto.css
   - css/page-single-article.css
   - css/ckeditor.css
