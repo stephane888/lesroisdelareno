@@ -1,5 +1,5 @@
 @use "@stephane888/wbu-atomique/scss/wbu-ressources-clean.scss" as *;
-@use "./variables.scss" as *;
+//@use "./variables.scss" as *;
 @use "./defaulttheme/baseStyle.scss";
 @use "./fonts/Ubuntu/police.scss";
 @use "@stephane888/wbu-atomique/scss/organisme/sections/footers/footer1.scss";
@@ -92,8 +92,13 @@ table {
   .form-control {
     width: auto;
   }
-  .btn + .btn {
-    margin-left: $wbu-margin;
+  .btn {
+    + .btn {
+      margin-left: $wbu-margin;
+    }
+    a {
+      color: inherit;
+    }
   }
   .js-form-wrapper {
     margin-top: $wbu-margin;
@@ -101,6 +106,13 @@ table {
   }
   .form-checkbox + label {
     padding-left: $wbu-margin * 0.5;
+  }
+}
+
+.btn {
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 }
 

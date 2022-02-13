@@ -292,7 +292,7 @@ function lesroisdelareno_page_attachments_alter(array &$attachments) {
      * @var \Drupal\wbumenudomain\Entity\Wbumenudomain $domainProperty
      */
     $domainProperty = reset($domainProperty);
-    $attachments['#attached']['library'][] = $domainProperty->getLirairy();
+    // $attachments['#attached']['library'][] = $domainProperty->getLirairy();
   }
   else {
     $attachments['#attached']['library'][] = 'lesroisdelareno/override-style';

@@ -1,5 +1,5 @@
 @use "@stephane888/wbu-atomique/scss/wbu-ressources-clean.scss" as *;
-@use "./variables.scss" as *;
+//@use "./variables.scss" as *;
 @use "./bootstrap.scss";
 @use "@stephane888/wbu-atomique/scss/atome/typography/_default.scss";
 @use "fonts/Ubuntu/police.scss";
@@ -38,4 +38,8 @@
   width: 100%;
   margin-left: 0;
   margin-right: 0;
+}
+
+body .owl-carousel .owl-item img {
+  width: auto;
 }
