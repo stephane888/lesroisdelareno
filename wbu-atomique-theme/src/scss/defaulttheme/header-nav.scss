@@ -98,10 +98,12 @@
     color: $wbu-color-primary;
   }
   .logo {
+    display: flex;
+    min-width: 130px;
     img {
       max-width: 200px;
       margin-top: -10px;
-      min-height: 80px;
+      max-height: 120px;
     }
   }
   .site-slogant {
