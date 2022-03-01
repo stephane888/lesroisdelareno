@@ -1,14 +1,10 @@
 {{ attach_library('lesroisdelareno/product-full') }}
-
 {% if page.top_header %}
 	{{ page.top_header }}
 {% endif %}
-
-
 {% if page.hero_slider %}
 	{{ page.hero_slider }}
 {% endif %}
-
 {% if page.content %}
 	<div{{page.content.attributes.addClass("container")}}>
 		<div class="page-product-full row">
@@ -21,13 +17,9 @@
 		</div>
 	</div>
 {% endif %}
-
-
 {% if page.call_to_action %}
 	{{ page.call_to_action }}
 {% endif %}
-
-
 {% if page.footer %}
 	{{ page.footer }}
 {% endif %}

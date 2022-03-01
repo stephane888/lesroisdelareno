@@ -4,6 +4,10 @@
 //@use "./variables.scss" as *;
 @use "./inc/boostrap.scss";
 @use "../defautl-style.scss";
+//page-default
+@use "@stephane888/wbu-atomique/scss/organisme/sections/page-header-bg.scss";
+@use "@stephane888/wbu-atomique/scss/molecule/steph/header-blog.scss";
+@use "@stephane888/wbu-atomique/scss/organisme/steph/lamaisonsaintgobain/single-article.scss";
 // Load librairy
 @use "@stephane888/wbu-atomique/scss/molecule/home_page/hero_section.scss";
 @use "@stephane888/wbu-atomique/scss/molecule/home_page/block__whoAreWe--plain.scss";
@@ -16,4 +20,3 @@
 @use "@stephane888/wbu-atomique/scss/organisme/rc-web/price-block.scss";
 @use "@stephane888/wbu-atomique/scss/organisme/rc-web/list-section.scss";
 @use "@stephane888/wbu-atomique/scss/organisme/teasers/teaser-m1.scss";
-@use "@stephane888/wbu-atomique/scss/organisme/sections/page-header-bg.scss";

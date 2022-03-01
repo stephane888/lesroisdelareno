@@ -100,6 +100,31 @@
       background: transparent;
     }
   }
+  .facets-custom {
+    ul {
+      list-style: none;
+      padding: 0;
+      .facet-item {
+        position: relative;
+        margin-bottom: 0.35rem;
+        z-index: 0;
+        input.facets-checkbox {
+          position: absolute;
+          left: 0;
+          top: 10px;
+          visibility: hidden;
+          z-index: -1;
+          &:checked + label {
+            color: $wbu-color-primary;
+          }
+        }
+        img {
+          width: 20px;
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
 }
 .product-full {
   fieldset {

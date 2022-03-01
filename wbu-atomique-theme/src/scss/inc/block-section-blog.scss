@@ -1,5 +1,6 @@
 @use "@stephane888/wbu-atomique/scss/wbu-ressources.scss" as *;
 @use "../variables.scss" as *;
+@import "@stephane888/wbu-atomique/scss/bootstrap_init.scss";
 .block-section-blog {
   /**
    * .titre-description
@@ -16,11 +17,11 @@
     padding: $wbu-margin 0;
     margin-bottom: $wbu-margin;
     .row {
-      margin-right: -$gutter;
-      margin-left: -$gutter;
+      margin-right: -$grid-gutter-width;
+      margin-left: -$grid-gutter-width;
     }
     .entete {
-      padding: 0 $gutter / 2;
+      padding: 0 $grid-gutter-width / 2;
       .title {
         a {
           color: inherit;

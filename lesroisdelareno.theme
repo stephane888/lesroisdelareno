@@ -333,7 +333,11 @@ function lesroisdelareno_preprocess_input__image_button(array &$variables) {
  * Implement hook_preprocess_page
  */
 function lesroisdelareno_preprocess_pager(array &$variables) {
-  // $variables['pager']['items'];
+  // dump($variables);
+/** @var \Drupal\Core\Pager\PagerManagerInterface $pager_manager */
+  // Drupal\Core\Pager\PagerManager
+  // $pager_manager = \Drupal::service('pager.manager');
+  // dump($pager_manager);
   // if (! isset($variables['items']) && $variables['pager']['items']) {
   // $variables = $variables['pager'] + $variables;
   // }
@@ -381,6 +385,10 @@ function lesroisdelareno_theme($existing, $type, $theme, $path) {
   ];
 }
 
+/**
+ *
+ * @param array $variables
+ */
 function lesroisdelareno_preprocess_commerce_checkout_pane(array &$variables) {
   if (!empty($variables['elements']['#pane_id'])) {
     $variables['attributes']['class'][] = $variables['elements']['#pane_id'];

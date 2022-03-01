@@ -11,25 +11,6 @@
 @use "@stephane888/wbu-atomique/scss/organisme/owls/owl-rc-web.scss";
 @use "./inc/domaine-service.scss";
 
-.bg-theme {
-  background-color: $wbu-color-secondary !important;
-  color: #c5c5c5;
-  .block__whoAreWe {
-    .h2Title {
-      color: #fff;
-      span {
-        color: $wbu-color-primary;
-      }
-    }
-  }
-  &.titre-section {
-    padding-bottom: $space_bottom;
-    .main {
-      color: #fff;
-      margin-bottom: $wbu-margin * 1.5;
-    }
-  }
-}
 .titre-section {
   .main {
     color: #000;
