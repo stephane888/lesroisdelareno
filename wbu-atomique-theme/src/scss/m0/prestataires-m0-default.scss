@@ -4,7 +4,7 @@
 @use "../defautl-style.scss";
 @use "../product-teaser.scss";
 
-// librairie;
+// Librairie;
 @use "@stephane888/wbu-atomique/scss/molecule/steph/teaser-img-desc.scss";
 @use "@stephane888/wbu-atomique/scss/molecule/steph/titre-section.scss";
 @use "@stephane888/wbu-atomique/scss/organisme/sections/titre-description.scss";
@@ -15,12 +15,32 @@
 @use "@stephane888/wbu-atomique/scss/organisme/steph/lesroidelareno/services-sliders.scss";
 @use "@stephane888/wbu-atomique/scss/organisme/owls/owl-default.scss";
 @use "@stephane888/wbu-atomique/scss/organisme/rc-web/hero.scss";
-@use "@stephane888/wbu-atomique/scss/organisme/rc-web/header.scss";
+@use "@stephane888/wbu-atomique/scss/organisme/rc-web/header.scss" as
+  rc_web_header;
 @use "@stephane888/wbu-atomique/scss/organisme/rc-web/titre-rc.scss";
 @use "@stephane888/wbu-atomique/scss/organisme/rc-web/price-block.scss";
 @use "@stephane888/wbu-atomique/scss/organisme/rc-web/list-section.scss";
-
+//
+@use "@stephane888/wbu-atomique/scss/organisme/sections/theme_builder/fusion-bootstrap/features.scss";
+@use "@stephane888/wbu-atomique/scss/organisme/sections/theme_builder/appson/header.scss";
+@use "@stephane888/wbu-atomique/scss/organisme/sections/theme_builder/fusion-bootstrap/service-section.scss";
+//
+@use "@stephane888/wbu-atomique/scss/organisme/sections/theme_builder/lbg/lgb-hero.scss";
+@use "@stephane888/wbu-atomique/scss/organisme/sections/theme_builder/lbg/lgb-left-right.scss";
+@use "@stephane888/wbu-atomique/scss/organisme/sections/theme_builder/kave-home/parquet.scss";
+@use "@stephane888/wbu-atomique/scss/organisme/sections/theme_builder/kave-home/block.scss";
+@use "@stephane888/wbu-atomique/scss/molecule/home_page/block__whoAreWe--plain.scss";
+//
+@use "@stephane888/wbu-atomique/scss/organisme/steph/pages/page-bigbackground.scss";
 @use "../inc/teaserPromotion.scss";
+//
+@use "@stephane888/wbu-atomique/scss/organisme/sections/theme_builder/saint-gobain/hero.scss"
+  as saint_gobain_hero;
+@use "@stephane888/wbu-atomique/scss/organisme/sections/theme_builder/vesperr/section__hero.scss";
+@use "@stephane888/wbu-atomique/scss/molecule/steph/puce-step-vertical.scss";
+//
+@use "@stephane888/wbu-atomique/scss/organisme/sections/theme_builder/saint-gobain/price.scss";
+//
 
 @mixin logo-partenaire {
   .logo-partenaire {

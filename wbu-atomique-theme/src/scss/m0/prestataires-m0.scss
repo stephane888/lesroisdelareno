@@ -4,6 +4,7 @@
 @use "../inc/block-page-title-block.scss";
 @use "../inc/filter-side-bar-search.scss";
 @use "../product-promotion.scss";
+@use "../step-donneesite.scss";
 
 .menu.navbar {
   @include media-min(DD) {
@@ -11,6 +12,11 @@
   }
 }
 
+// teaser
+.billetDeBlogTeaser {
+  margin-bottom: $wbu-margin * 1.5;
+  min-height: 375px;
+}
 .filter-side-bar-search {
   margin-bottom: $wbu-margin * 1.5;
   .form-row {

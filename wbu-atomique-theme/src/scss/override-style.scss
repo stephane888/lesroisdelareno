@@ -3,6 +3,7 @@
 @use "./bootstrap.scss";
 @use "@stephane888/wbu-atomique/scss/atome/typography/_default.scss";
 @use "fonts/Ubuntu/police.scss";
+@use "@stephane888/wbu-atomique/scss/molecule/steph/puce-check.scss";
 
 .container {
   max-width: 1200px;
@@ -23,6 +24,14 @@
     padding-bottom: $wbu-margin * 2.5;
   }
 }
+// definie les container de lecture.
+.with-phone {
+  max-width: $with_phone;
+}
+.with-tablet {
+  max-width: $with_tablet;
+}
+
 // on supprimer la marge-bottom sur le dernier article dans une liste:
 .views {
   .views-row {

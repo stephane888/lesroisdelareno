@@ -28,8 +28,23 @@
 		<h1 class="title">
 			{{ product.title }}
 		</h1>
-		{{ product.variation_price }}
-		{{- product | without ('variation_attributes','field_images','body','field_informations_complementair','field_fiche_technique','variation_price','field_commentaires') -}}
+		<div class="h3">
+		  {{ product.variation_price }}
+		</div>
+		{% if vendu_en_magazin %}		  
+    		  <a href="{{- product_url -}}" class="button--add-to-cart button js-form-submit form-submit btn btn-outline-info text-info d-block w-100 text-center mb-5">
+                <i class="icon-bag"></i> Disponible chez
+                {{ vendu_en_magazin|striptags|length > 15 ? vendu_en_magazin|striptags|slice(0, 15) ~ '...' : vendu_en_magazin|striptags   }}
+            </a>   
+            {% if localisation %}
+                <div class="d-flex">
+                    <i class="icon-picons-pin-2 mr-2"></i> {{ localisation }}
+                </div>
+            {% endif %}       
+		{% else %}
+		  {{- product | without ('variation_attributes','field_images','body','field_informations_complementair','field_fiche_technique','variation_price','field_commentaires') -}}
+		{% endif %}
+		
 		<div class="call-action-devis">
 			<i class="icon-tools"></i>
 			<span>

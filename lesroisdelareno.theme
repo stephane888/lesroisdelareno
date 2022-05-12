@@ -4,7 +4,7 @@ use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Drupal\Core\Url;
-use Stephane888\Debug\debugLog;
+
 use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\Core\Template\Attribute;
 use Drupal\wbumenudomain\Entity\Wbumenudomain as WbumenudomainEntity;
@@ -222,14 +222,11 @@ function lesroisdelareno_preprocess_menu_link_content(&$vars) {
 }
 
 function lesroisdelareno_preprocess_commerce_product(&$vars) {
-  // dump($vars['product_entity']);
-  // debugLog::$max_depth = 5;
-  // debugLog::kintDebugDrupal($vars['product_entity'],
-  // 'lesroisdelareno_preprocess_commerce_product', true);
+  //
 }
 
 /**
- * Implement hook_preprocess_page
+ * Implement hook_preprocess_layout
  */
 function lesroisdelareno_preprocess_layout(&$variables) {
   if ($variables['theme_hook_original'] === 'footer') {
@@ -242,7 +239,7 @@ function lesroisdelareno_preprocess_layout(&$variables) {
 }
 
 /**
- * Implement hook_preprocess_page
+ * Implement hook_preprocess_select
  */
 function lesroisdelareno_preprocess_select(&$variables) {
   if (!empty($variables['options'][0]) && $variables['options'][0]['value'] == 'All') {
@@ -255,10 +252,6 @@ function lesroisdelareno_preprocess_select(&$variables) {
  * @param array $variables
  */
 function lesroisdelareno_preprocess_formatage_models_realisation_big(&$variables) {
-  // dump($variables);
-  // debugLog::$max_depth = 7;
-  // debugLog::kintDebugDrupal($variables,
-  // 'lesroisdelareno_preprocess_formatage_models_realisation_big', true);
   JobseekersResouces::getView__resaliserPar($variables);
 }
 
@@ -267,42 +260,42 @@ function lesroisdelareno_preprocess_formatage_models_realisation_small(&$variabl
 }
 
 /**
- * Implement hook_preprocess_page
+ * Implement hook_page_attachments_alter
  */
 function lesroisdelareno_page_attachments_alter(array &$attachments) {
   // $user = User::load(0);
   // dump($user);
   // get current domaine id
-  /** @var \Drupal\domain\Entity\Domain $active */
-  $active = \Drupal::service('domain.negotiator')->getActiveDomain();
-  $id = '';
-  if (empty($active)) {
-    $active = \Drupal::entityTypeManager()->getStorage('domain')->loadDefaultDomain();
-  }
-  if (!empty($active))
-    $id = $active->id();
+/** @var \Drupal\domain\Entity\Domain $active */
+  // $active = \Drupal::service('domain.negotiator')->getActiveDomain();
+  // $id = '';
+  // if (empty($active)) {
+  // $active = \Drupal::entityTypeManager()->getStorage('domain')->loadDefaultDomain();
+  // }
+  // if (!empty($active))
+  // $id = $active->id();
   
-  $query = \Drupal::entityQuery('wbumenudomain')->condition('hostname', $id);
-  $domainIds = $query->execute();
-  $domainProperty = WbumenudomainEntity::loadMultiple($domainIds);
+  // $query = \Drupal::entityQuery('wbumenudomain')->condition('hostname', $id);
+  // $domainIds = $query->execute();
+  // $domainProperty = WbumenudomainEntity::loadMultiple($domainIds);
   
-  if (!empty($domainProperty)) {
-    /**
-     *
-     * @var \Drupal\wbumenudomain\Entity\Wbumenudomain $domainProperty
-     */
-    $domainProperty = reset($domainProperty);
-    // $attachments['#attached']['library'][] = $domainProperty->getLirairy();
-  }
-  else {
-    $attachments['#attached']['library'][] = 'lesroisdelareno/override-style';
-    $attachments['#attached']['library'][] = 'lesroisdelareno/google-oswald';
-    $attachments['#attached']['library'][] = 'lesroisdelareno/defautl-style';
-  }
+  // if (!empty($domainProperty)) {
+  // /**
+  // *
+  // * @var \Drupal\wbumenudomain\Entity\Wbumenudomain $domainProperty
+  // */
+  // $domainProperty = reset($domainProperty);
+  // // $attachments['#attached']['library'][] = $domainProperty->getLirairy();
+  // }
+  // else {
+  // $attachments['#attached']['library'][] = 'lesroisdelareno/override-style';
+  // $attachments['#attached']['library'][] = 'lesroisdelareno/google-oswald';
+  // $attachments['#attached']['library'][] = 'lesroisdelareno/defautl-style';
+  // }
 }
 
 /**
- * Implement hook_preprocess_page
+ * Implement hook_preprocess_layout_main_menu
  */
 function lesroisdelareno_preprocess_layout_main_menu(array &$variables) {
   $block = \Drupal\block\Entity\Block::load('lesroisdelareno_main_menu');
@@ -310,7 +303,7 @@ function lesroisdelareno_preprocess_layout_main_menu(array &$variables) {
 }
 
 /**
- * Implement hook_preprocess_page
+ * Implement hook_preprocess_menu__extras
  */
 function lesroisdelareno_preprocess_menu__extras(array &$variables) {
   // dump($variables);
@@ -318,7 +311,7 @@ function lesroisdelareno_preprocess_menu__extras(array &$variables) {
 }
 
 /**
- * Implement hook_preprocess_page
+ * Implement hook_preprocess_input__image_button
  */
 function lesroisdelareno_preprocess_input__image_button(array &$variables) {
   if (isset($variables['element']["#src"]) && $variables['element']["#src"] === 'modules/contrib/webform/images/icons/plus.svg') {
@@ -330,7 +323,7 @@ function lesroisdelareno_preprocess_input__image_button(array &$variables) {
 }
 
 /**
- * Implement hook_preprocess_page
+ * Implement hook_preprocess_pager
  */
 function lesroisdelareno_preprocess_pager(array &$variables) {
   // dump($variables);
@@ -372,7 +365,7 @@ function lesroisdelareno_preprocess_form(array &$variables) {
 }
 
 /**
- * Implement hook_preprocess_page
+ * Implement hook_theme
  */
 function lesroisdelareno_theme($existing, $type, $theme, $path) {
   return [

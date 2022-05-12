@@ -2,7 +2,7 @@
 @use "./variables.scss" as *;
 
 .page-prestaires {
-  .block {
+  .region-sidebar-left .block {
     margin-bottom: $wbu-margin * 2;
   }
 
@@ -16,16 +16,6 @@
     max-width: 400px;
     .image-logo {
       margin-right: $wbu-margin * 0.5;
-    }
-  }
-
-  // teaser
-  .billetDeBlogTeaser {
-    margin-bottom: $wbu-margin * 1.5;
-    &__text {
-      .title {
-        font-size: 2.1rem;
-      }
     }
   }
 

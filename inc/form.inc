@@ -4,7 +4,7 @@ use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 use Drupal\Component\Render\FormattableMarkup;
 
 // use Drupal\Core\StringTranslation\TranslatableMarkup;
-use Stephane888\Debug\debugLog;
+
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -57,7 +57,7 @@ function lesroisdelareno_form_alter(&$form, \Drupal\Core\Form\FormStateInterface
     
     $form['actions']['submit']['#wbu_theme_icon'] = [
       'icon_after' => false,
-      'icon' => 'icon-vcard',
+      'icon' => 'icon-bag',
       'hidde_text' => false,
       'icon_theme' => "icon",
       'clean_class' => false,
