@@ -32,7 +32,23 @@ lesroisdelareno.single-blog:
       label: bgimage
     date:
       label: date
-
+      
+lesroisdelareno.project_content:
+  label: 'Content project'
+  category: 'Template lesroisdelareno'
+  template: templates/layouts/DefaultSection/project-content
+  default_region: image
+  regions:
+    image:
+      label: Image
+    texte:
+      label: Texte
+    datepost:
+      label: Datepost
+    categorie:
+      label: Categorie
+    client:
+      label: Client
 
 lesroisdelareno.entete_project:
   label: "Entete project"
