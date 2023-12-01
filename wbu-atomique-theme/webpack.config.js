@@ -19,48 +19,12 @@ plugins.push(
   })
 );
 
+console.log("devMode", devMode);
 module.exports = {
   plugins,
   mode: env || "development", // On définit le mode en fonction de la valeur de NODE_ENV
   entry: {
-    "teaser-realisation": "./src/js/teaser-realisation.js",
-    "single-blog": "./src/js/single-blog.js",
-    "page-blogs": "./src/js/page-blogs.js",
-    "override-style": "./src/js/override-style.js",
-    commentaire: "./src/js/commentaire.js",
-    "page-taxonomie": "./src/js/page-taxonomie.js",
-    "page-single-article": "./src/js/page-single-article.js",
-    "page-home-principal": "./src/js/page-home-principal.js",
-    "page-single-realisation": "./src/js/page-single-realisation.js",
-    "page-nos-guides-travaux": "./src/js/page-nos-guides-travaux.js",
-    "page-nos-realisations": "./src/js/page-nos-realisations.js",
-    "page-travaux-renovations": "./src/js/page-travaux-renovations.js",
     "page-default": "./src/js/page-default.js",
-    "defautl-style": "./src/js/defautl-style.js",
-    "product-full": "./src/js/product-full.js",
-    "product-teaser": "./src/js/product-teaser.js",
-    "product-teaser-mini": "./src/js/product-teaser-mini.js",
-    "teaser-bonus": "./src/js/teaser-bonus.js",
-    prestataires: "./src/js/prestataires.js",
-    "prestataires-m0": "./src/js/prestataires-m0.js",
-    "prestataires-m0-default": "./src/js/prestataires-m0-default.js",
-    "prestataires-m1": "./src/js/prestataires-m1.js",
-    "prestataires-m1-default": "./src/js/prestataires-m1-default.js",
-    "prestataires-m2": "./src/js/prestataires-m2.js",
-    "prestataires-m2-default": "./src/js/prestataires-m2-default.js",
-    "prestataires-m3": "./src/js/prestataires-m3.js",
-    "prestataires-m3-default": "./src/js/prestataires-m3-default.js",
-    "prestataires-m4": "./src/js/prestataires-m4.js",
-    "prestataires-m4-default": "./src/js/prestataires-m4-default.js",
-    "prestataires-m5": "./src/js/prestataires-m5.js",
-    "prestataires-m5-default": "./src/js/prestataires-m5-default.js",
-    "prestataires-m6": "./src/js/prestataires-m6.js",
-    "prestataires-m6-default": "./src/js/prestataires-m6-default.js",
-    "prestataires-m7": "./src/js/prestataires-m7.js",
-    "prestataires-m7-default": "./src/js/prestataires-m7-default.js",
-    "prestataires-m8": "./src/js/prestataires-m8.js",
-    "prestataires-m8-default": "./src/js/prestataires-m8-default.js",
-    "site-default": "./src/js/site-default.js",
   },
   output: {
     path: path.resolve(__dirname, "../"),
@@ -80,7 +44,7 @@ module.exports = {
           },
         },
       },
-      // Règles de compilations pour les fichiers .css
+      //règles de compilations pour les fichiers .css
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
@@ -128,7 +92,7 @@ module.exports = {
       },
       //règles de compilations pour les images
       {
-        test: /\.(gif|png|jpe?g)$/i,
+        test: /\.(gif|png|eot|jpe?g)$/i,
         use: [
           {
             // Using file-loader for these files
